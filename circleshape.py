@@ -23,3 +23,7 @@ class CircleShape(pygame.sprite.Sprite):
 
     def triangle(self):
         pass
+
+    def colide(self, player):
+        distance = self.position.distance_to(player.position)
+        return distance <= self.radius + player.radius
