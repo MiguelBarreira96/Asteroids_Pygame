@@ -43,6 +43,11 @@ def main():
             if asteroid.colide(player):
                 sys.exit("Game over!")
                 
+        for asteroid in asteroids:
+            for shot in shots:
+                if asteroid.colide(shot):
+                    asteroid.split()
+                    shot.kill()    
 
         dt = clock.tick(60) / 1000
 
